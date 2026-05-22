@@ -5,11 +5,12 @@ from crewai.flow.flow import Flow, listen, start, or_
 
 load_dotenv()
 
+from crewai import LLM
+
 groq_llm = LLM(
     model="groq/llama3-8b-8192",
-    api_key=os.getenv("GROQ_API_KEY")
+    api_key=os.getenv("GROQ_API_KEY"),
 )
-
 class SimpleMarketingFlow(Flow):
 
     @start()
